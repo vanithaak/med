@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.0.12/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.0.12/dist/js/select2.min.js"></script>
+</head>
+
+<body>
+
+    <div>
+        <p>選択肢追加可能(multiple)</p>
+        <select class="dynamic-option-create-multiple" style="width: 100%;">
+            <option value="a">apple</option>
+            <option value="b">banana</option>
+            <option value="c">cherry</option>
+        </select>
+    </div>
+    
+
+
+        <script>
+            $(document).ready(function () {
+
+                $("select.dynamic-option-create-multiple").select2({
+                    tags: true,
+                    multiple: true,
+                });
+            })
+        </script>
+</body>
+
+</html>

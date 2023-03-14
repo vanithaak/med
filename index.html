@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+
+  <title>PO CREATION</title>
+
+  <meta name="description" content="" />
+
+  <!-- Favicon -->
+
+
+  <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.0.12/dist/css/select2.min.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/select2@4.0.12/dist/js/select2.min.js"></script>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="assets/css/materialize.css" type="text/css" rel="stylesheet" />
+  <link href="assets/css/style.css" type="text/css" rel="stylesheet" />
+  <script src="https://unpkg.com/html5-qrcode@2.0.9/dist/html5-qrcode.min.js"></script>
+
+
+
+</head>
+
+<body data-base="/">
+
+  <!-- Layout wrapper -->
+  <div class="layout-wrapper layout-content-navbar">
+    <div class="layout-container">
+
+      <!-- Layout container -->
+      <div class="layout-page">
+        <!-- Dropdown Structure -->
+        <ul id="user-profile" class="dropdown-content">
+          <li><a href="account.html">Account</a></li>
+          <!-- <li><a href="#!">Account</a></li>
+          <li><a href="#!">Dashboard</a></li> -->
+          <li class="divider"></li>
+          <li><a href="#!">Sign Out</a></li>
+        </ul>
+        <nav>
+          <div class="nav-wrapper">
+
+            <ul class="right">
+              <!-- Dropdown Trigger -->
+              <li><a class="dropdown-trigger" href="#!" data-target="user-profile"><i
+                    class="material-icons left">person</i><i class="material-icons right">arrow_drop_down</i></a></li>
+            </ul>
+          </div>
+        </nav>
+
+        <!-- Content wrapper -->
+        <div class="content-wrapper">
+
+          <!-- <div class="row"> -->
+          <div class="col s12">
+            <ul class="tabs">
+              <li class="tab col s3"><a href="#home" class="active">Home</a></li>
+              <li class="tab col s3"><a href="#account">Dashboard</a></li>
+            </ul>
+          </div>
+          <div id="home" class="col s12">
+            <div class="section no-pad-bot" id="index-banner">
+              <div class="container">
+                <h6>Patient Details</h6>
+                <div class="row">
+                  <form class="col s12">
+                    <div class="row">
+                      <div class="input-field col s6">
+                        <input id="custname" type="text" class="validate">
+                        <label for="custname">Customer Name</label>
+                      </div>
+                      <div class="input-field col s6">
+                        <input id="fullname" type="text" class="validate">
+                        <label for="fullname">Patient Name</label>
+                      </div>
+                    </div>
+                    <span class="badge green text-white">CREDIT ELIGIBLE</span>
+                    <div class="row">
+                      <!-- <div class="input-field col s6">
+                        <input id="fullname" type="text" class="validate">
+                        <label for="fullname">Patient Name</label>
+                      </div> -->
+                    </div>
+                    <div class="row">
+                      <div class="input-field col s6">
+                        <input id="age" type="text" class="validate">
+                        <label for="age">Age</label>
+                      </div>
+                      <div class="col s6">
+                        <div class="input-field col s12">
+                          <select>
+                            <option value="" disabled selected>Choose Gender</option>
+                            <option value="1">Male</option>
+                            <option value="2">Female</option>
+                            <option value="3">Transgender</option>
+                            <option value="4">Non-Binary</option>
+                          </select>
+                          <!-- <label>Select Gender</label> -->
+                        </div>
+                      </div>
+                    </div>
+
+
+                    <div class="row">
+                      <div class="input-field col s12">
+                        <input id="email" type="number" class="validate">
+                        <label for="email">Phone No</label>
+                      </div>
+                    </div>
+
+                  </form>
+                </div>
+                <!--  tests-->
+                <h6 class="">Tests</h6>
+                <div class="input-container row">
+
+                  <div class="col s12">
+                    <!-- <p>(multiple)</p -->
+                    <select class="dynamic-option-create-multiple" style="width: 100%;">
+                      <option value="a">Blood</option>
+                      <option value="b"></option>
+                      <option value="c">cherry</option>
+                    </select>
+                  </div>
+
+
+
+
+                </div>
+
+
+                <!--  tests-->
+
+                <h6>Bar Code</h6>
+                <div class="row">
+                  <form class="col s12">
+                    <div class="row">
+                      <div class="input-field col s12">
+                        <!-- <input id="barcode" type="number" class="validate">
+                        <label for="barcode">Enter Bar Code</label> -->
+                        <div id="qr-reader" style="width: auto"></div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+
+                <!-- Payment -->
+                <h6 class="">Payment Type</h6>
+                <!-- <ul class="collapsible popout">
+                  <li>
+                    <div class="collapsible-header"><i class="material-icons">attach_money</i>Cash</div>
+                    <div class="collapsible-body"><span>Please handover the cash to the agent</span></div>
+                  </li>
+                  <li>
+                    <div class="collapsible-header"><i class="material-icons">credit_card</i>Card</div>
+                    <div class="collapsible-body">
+                      <div class="row">
+                        <div class="input-field col s12">
+                          <input id="creditphone" type="number" class="validate">
+                          <label for="creditphone">Phone No</label>
+                        </div>
+
+
+
+                      </div>
+
+                      <div class="col s12">
+                        <div class="file-field input-field">
+                          <div class="btn">
+                            <span>File</span>
+                            <input type="file">
+                          </div>
+                          <div class="file-path-wrapper">
+                            <input class="file-path validate" type="text">
+                          </div>
+                        </div>
+                      </div>
+                      <p class="center-align">
+                        <a class="waves-effect waves-light btn">Send</a>
+                      </p>
+                      <span>A link will be sent to the Customer</span>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="collapsible-header"><i class="material-icons">add_circle</i>Credit</div>
+                    <div class="collapsible-body"><span>Yay! you are credit eligible</span></div>
+                  </li>
+                  <li>
+                    <div class="collapsible-header"><i class="material-icons">phone_android</i>UPI</div>
+                    <div class="collapsible-body">
+                      <span>Please Scan the QR code.</span>
+                    </div>
+                  </li>
+                </ul> -->
+
+                <!-- tabs -->
+                <div class="row">
+                  <div class="col s12">
+                    <ul class="tabs">
+                      <li class="tab col s3"><a href="#test1">Cash</a></li>
+                      <li class="tab col s3"><a class="" href="#test2">Credit Card</a></li>
+                      <li class="tab col s3"><a href="#test3">Credit</a></li>
+                      <li class="tab col s3"><a href="#test4">UPI</a></li>
+                    </ul>
+                  </div>
+                  <div id="test1" class="col s12">
+                    <span>Please handover the cash to the agent</span>
+                  </div>
+                  <div id="test2" class="col s12">
+                    <div class="row">
+                      <div class="input-field col s12">
+                        <input id="email" type="number" class="validate">
+                        <label for="email">Phone No</label>
+                      </div>
+                    </div>
+                    <p class="center-align">
+                      <a class="waves-effect waves-light btn">Send</a>
+                    </p>
+                    <span>A link will be sent to the Customer</span>
+                  </div>
+                  <div id="test3" class="col s12"><span>Yay! you are credit eligible</span></div>
+                  <div id="test4" class="col s12"><span>Please Scan the QR code.</span></div>
+                </div>
+                <!-- tabs -->
+
+
+                <p class="center-align">
+                  <a class="waves-effect waves-light btn">Submit</a>
+                </p>
+
+
+              </div>
+            </div>
+          </div>
+          <div id="account" class="col s12">
+            <div class="container">
+              <div class="row">
+                <div class="col s12 m6">
+                  <div class="card blue-grey darken-1">
+                    <div class="card-content white-text">
+                      <span class="card-title">Cash Remaining</span>
+                      <p>987897 Rs</p>
+                    </div>
+                    <!-- <div class="card-action">
+                          <a href="#">This is a link</a>
+                          <a href="#">This is a link</a>
+                        </div> -->
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col s12 m6">
+                  <div class="card blue-grey darken-1">
+                    <div class="card-content white-text">
+                      <span class="card-title">Others</span>
+                      <p>9887 Rs</p>
+                    </div>
+                    <!-- <div class="card-action">
+                          <a href="#">This is a link</a>
+                          <a href="#">This is a link</a>
+                        </div> -->
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col s12 m6">
+                  <div class="card blue-grey darken-1">
+                    <div class="card-content white-text">
+                      <span class="card-title">In Hand</span>
+                      <p>9877 Rs</p>
+                    </div>
+                    <!-- <div class="card-action">
+                          <a href="#">This is a link</a>
+                          <a href="#">This is a link</a>
+                        </div> -->
+                  </div>
+                </div>
+              </div>
+
+              <!-- table -->
+              <div class="row">
+                <table class="stripped responsive-table">
+                  <thead>
+                    <tr>
+                      <th>ID</th>
+                      <th>Date</th>
+                      <th>Amount</th>
+                    </tr>
+                  </thead>
+
+                  <tbody>
+                    <tr>
+                      <td>001</td>
+                      <td><strong>2023-02-06</strong></td>
+                      <td>
+                        9873
+                      </td>
+
+                    </tr>
+                    <tr>
+                      <td>001</td>
+                      <td><strong>2023-02-06</strong></td>
+
+                      <td>
+                        98798
+                      </td>
+
+                    </tr>
+                    <tr>
+                      <td>002</td>
+                      <td><strong>2023-02-06</strong></td>
+
+                      <td>
+                        987392
+                      </td>
+
+                    </tr>
+                    <tr>
+                      <td>003</td>
+                      <td><strong>2023-02-06</strong></td>
+
+                      <td>
+                        2899
+                      </td>
+
+
+                    </tr>
+
+
+                  </tbody>
+                </table>
+              </div>
+
+              <!-- table -->
+
+
+
+
+            </div>
+          </div>
+          <!-- </div> -->
+
+
+
+
+        </div>
+        <!-- Content wrapper -->
+      </div>
+      <!-- / Layout page -->
+
+    </div>
+
+    <!-- Overlay -->
+
+  </div>
+  <!-- / Layout wrapper -->
+
+  <!-- Helpers -->
+  <script>
+    document.body.style.zoom = "80%"
+  </script>
+  <!-- <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script> -->
+  <script src="assets/js/materialize.js"></script>
+  <script src="assets/js/init.js"></script>
+  <script>
+    $(document).ready(function (e) {
+
+      $(".dropdown-trigger").dropdown();
+      $('select').formSelect();
+      $('.collapsible').collapsible();
+      $('.tabs').tabs();
+      $("select.dynamic-option-create-multiple").select2({
+        tags: true,
+        multiple: true,
+      });
+    });
+
+    function onScanSuccess(decodedText, decodedResult) {
+      console.log(`Code scanned = ${decodedText}`, decodedResult);
+    }
+    var html5QrcodeScanner = new Html5QrcodeScanner(
+      "qr-reader", { fps: 10, qrbox: 250 });
+    html5QrcodeScanner.render(onScanSuccess);
+
+    //   $(document).ready(function(){
+    //   $('.collapsible').collapsible();
+    // });
+
+    // const addButton = document.querySelector('.add-btn');
+    // const inputFieldContainer = document.querySelector('.input-container');
+
+
+    // addButton.addEventListener('click', () => {
+
+    //   const newInputField = createInputField();
+
+    //   inputFieldContainer.appendChild(newInputField);
+    // });
+
+
+    // inputFieldContainer.addEventListener('click', (event) => {
+    //   if (event.target.classList.contains('delete-btn')) {
+    //     const deleteButtonContainer = event.target.parentNode;
+    //     const inputFieldContainer = deleteButtonContainer.parentNode;
+
+    //     const inputField = inputFieldContainer.querySelector('.browser-input');
+    //     if (inputField) {
+    //       inputFieldContainer.removeChild(deleteButtonContainer);
+    //       inputFieldContainer.removeChild(inputField);
+    //     }
+    //   }
+    // });
+
+
+    // Helper function
+  //   function createInputField() {
+  //     const inputField = document.createElement('div');
+  //     inputField.classList.add('col', 's9');
+  //     inputField.innerHTML = `
+  //   <input list="browsers" name="browser" id="browser" class="browser-input">
+  //   <datalist id="browsers">
+  //     <option value="Edge">
+  //     <option value="Firefox">
+  //     <option value="Chrome">
+  //     <option value="Opera">
+  //     <option value="Safari">
+  //   </datalist>
+  //   <label for="browser"></label>
+  // `;
+
+  //     const deleteButtonContainer = document.createElement('div');
+  //     deleteButtonContainer.classList.add('col', 's3');
+  //     deleteButtonContainer.innerHTML = `
+  //   <a class="btn waves-effect waves-light red delete-btn"><i class="material-icons">delete</i></a>
+  // `;
+
+  //     inputFieldContainer.appendChild(inputField);
+  //     inputFieldContainer.appendChild(deleteButtonContainer);
+
+  //     return inputField;
+  //   }
+
+  </script>
+
+
+</body>
+
+</html>
